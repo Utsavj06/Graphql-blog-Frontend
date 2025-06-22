@@ -12,10 +12,10 @@ const root = ReactDOM.createRoot(
 const client = new ApolloClient({ uri: 'http://localhost:5000/graphql', cache: new InMemoryCache() });
 root.render(
   <ApolloProvider client={client}>
-  <BrowserRouter>
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-  </BrowserRouter>
+    <BrowserRouter>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </BrowserRouter>
   </ApolloProvider>
 );

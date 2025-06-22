@@ -1,5 +1,6 @@
 import { useQuery } from '@apollo/client'
 import { GET_BLOGS } from '../graphql/queries'
+import BlogList from './BlogList'
 
 const Blogs = () => {
     const {loading, data, error} = useQuery(GET_BLOGS)
@@ -7,10 +8,10 @@ const Blogs = () => {
     if(loading) return <p>Loading...</p>
     if(error) return <p>Error.....</p>
 
-    console.log(data)
+    // console.log(data)
   return (
     <div>
-      Blogs
+      <BlogList blogs={data.blogs} />
     </div>
   )
 }
