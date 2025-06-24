@@ -20,7 +20,7 @@ export const homepage: StyleMap = {
     text: {
         fontSize: { lg: 50, md: 40, sm: 35, xs: 20 },
     },
-    images: { 
+    images: {
         boxShadow: '10px 10px 25px rgba(0, 0, 0, 4)',
         borderRadius: 20,   
     },

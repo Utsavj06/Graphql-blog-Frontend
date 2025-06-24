@@ -5,17 +5,21 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/client';
 import { ApolloClient, InMemoryCache } from '@apollo/client/core';
+import { Provider } from 'react-redux';
+import { store } from './store';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 const client = new ApolloClient({ uri: 'http://localhost:5000/graphql', cache: new InMemoryCache() });
 root.render(
-  <ApolloProvider client={client}>
-    <BrowserRouter>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </BrowserRouter>
-  </ApolloProvider>
+  <Provider store={store}>
+    <ApolloProvider client={client}>
+      <BrowserRouter>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </BrowserRouter>
+    </ApolloProvider>
+  </Provider>
 );
