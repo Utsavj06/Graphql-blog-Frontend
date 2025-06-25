@@ -18,3 +18,12 @@ export const LOGIN_USER = gql`
     }
   }
 `;
+
+export const CREATE_BLOG = gql`
+  mutation CreateBlog($title: String!, $content: String!, $date: String!, $user: ID! ) {
+    addBlog(title: $title, content: $content, date: $date, user: $user) {
+      title,
+      content
+    }
+  }
+`;

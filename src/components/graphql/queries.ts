@@ -9,6 +9,7 @@ export const GET_BLOGS = gql`
     user {
       name
       id
+      email
     }
   }
 }
